@@ -15,5 +15,5 @@ import sars.gov.za.management.domain.User;
  */
 @Repository
 public interface UserRepository  extends JpaRepository<User,Long>{
-    User findUserByUserNameAndPassword(String UserName,String password);
+    User findUserByUserNameAndPassword(String userName,String password);
 }

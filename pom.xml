@@ -246,7 +246,7 @@
                                 <goal>deploy</goal>
                             </goals>
                             <configuration>
-                                <jbossHome>C:\Users\S2028873\Documents\JavaProjects\wildfly-28.0.0.Beta1</jbossHome>
+                                <jbossHome>C:\Users\S2028873\Documents\JavaProjects\wildfly-19.0.0.Final</jbossHome>
                             </configuration>
                         </execution>
                     </executions>

@@ -61,8 +61,8 @@ public class UserService implements UserServiceLocal {
     }
 
     @Override
-    public User findUserByUserNameAndPassword(String UserName, String password) {
-      return userRepository.findUserByUserNameAndPassword(UserName, password);
+    public User findUserByUserNameAndPassword(String userName, String password) {
+      return userRepository.findUserByUserNameAndPassword(userName, password);
     }
 }
 

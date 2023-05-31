@@ -29,7 +29,7 @@ public class User  extends Person {
 //identifer
 
     @Column(name = "user_name")
-    private String UserName;
+    private String userName;
 
     @Column(name = "password")
     private String password;
@@ -41,18 +41,18 @@ public class User  extends Person {
     private String changePassword;
      
      @Enumerated(EnumType.STRING)
-     @Column(name="sytem_user_status")
+     @Column(name="system_user_status")
      private SystemUserStatus systemUserStatus;
      
      @ManyToOne(cascade=CascadeType.MERGE,fetch=FetchType.LAZY)
      private School school;
 
     public String getUserName() {
-        return UserName;
+        return userName;
     }
 
-    public void setUserName(String UserName) {
-        this.UserName = UserName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {

@@ -27,5 +27,5 @@ public interface UserServiceLocal {
 
     boolean isExist(User user);
 
-    User findUserByUserNameAndPassword(String UserName, String password);
+    User findUserByUserNameAndPassword(String userName, String password);
 }
