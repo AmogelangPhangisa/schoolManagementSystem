@@ -26,7 +26,9 @@ import sars.gov.za.management.common.SystemUserStatus;
 public class User  extends Person {
 
 
-//identifer
+
+    @Column(name = "identifer")
+    private String identifer;
 
     @Column(name = "user_name")
     private String userName;
@@ -93,6 +95,14 @@ public class User  extends Person {
 
     public void setSystemUserStatus(SystemUserStatus systemUserStatus) {
         this.systemUserStatus = systemUserStatus;
+    }
+
+    public String getIdentifer() {
+        return identifer;
+    }
+
+    public void setIdentifer(String identifer) {
+        this.identifer = identifer;
     }
 
   

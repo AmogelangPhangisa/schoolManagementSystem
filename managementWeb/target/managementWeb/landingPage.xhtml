@@ -11,7 +11,7 @@
         <ui:composition template="/template/template.xhtml">
             <ui:define name="maincontent">
                 <b:panel look="default"  collapsible="false" collapsed="false" contentStyle="height:400px;text-align: center;">
-                    <p:outputLabel value="" styleClass="welcome-msg-css"/>
+                    <p:outputLabel value="#{activeUserBean.moduleWelcomeMessage}" styleClass="welcome-msg-css"/>
                 </b:panel>
             </ui:define>
         </ui:composition>

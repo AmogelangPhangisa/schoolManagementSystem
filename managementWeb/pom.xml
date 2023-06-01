@@ -110,6 +110,12 @@
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>          
         </dependency>  -->
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>1.3.5</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
     <build>
         <finalName>managementWeb</finalName>

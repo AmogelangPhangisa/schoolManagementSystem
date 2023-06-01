@@ -18,26 +18,45 @@ import sars.gov.za.management.service.UserServiceLocal;
  */
 @ManagedBean
 @RequestScope
-public class LoginBean extends BaseBean{
-    
+public class LoginBean extends BaseBean {
+
     @Autowired
     private UserServiceLocal userService;
-    
+
     private String username;
     private String password;
-    
-    public void login(){
-    
+
+    public void login() {
+
         User user = userService.findUserByUserNameAndPassword(username, password);
-        
-        if(user != null){
-        
-        if (user.getPersonType().equals(PersonType.ADMINISTRATOR)&& user.getSystemUserStatus().equals(SystemUserStatus.ACTIVE)){
-        
-            System.out.println("Logged in");
-        
+
+        if (user != null) {
+
+            if (user.getPersonType().equals(PersonType.ADMINISTRATOR) && user.getSystemUserStatus().equals(SystemUserStatus.ACTIVE)) {
+                getActiveUserBean().setModuleWelcomeMessage("welcome to admin console");
+                getActiveUser().getRouter().reset().setAdminstrator(true);
+                getActiveUser().setLoggedOnUserSession(user);
+                redirect("landingPage");
+            } else if (user.getPersonType().equals(PersonType.EMPLOYEE) && user.getSystemUserStatus().equals(SystemUserStatus.ACTIVE)) {
+                getActiveUserBean().setModuleWelcomeMessage("welcome to employee console");
+                getActiveUser().getRouter().reset().setEducator(true);
+                getActiveUser().getRouter().reset().setHod(true);
+                getActiveUser().getRouter().reset().setPrincipal(true);
+                getActiveUser().setLoggedOnUserSession(user);
+                redirect("landingPage");
+            } else if (user.getPersonType().equals(PersonType.LEARNER) && user.getSystemUserStatus().equals(SystemUserStatus.ACTIVE)) {
+                getActiveUserBean().setModuleWelcomeMessage("welcome to learner console");
+                getActiveUser().getRouter().reset().setLearner(true);
+                getActiveUser().setLoggedOnUserSession(user);
+                redirect("landingPage");
+            }
+            else {
+                redirect("login");
+            }
         }
-        } 
+        else {
+            addErrorMessage("The user with the username " + username + " is not authorised to use the system");
+        }
     }
 
     public String getUsername() {
@@ -55,5 +74,5 @@ public class LoginBean extends BaseBean{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
 }
