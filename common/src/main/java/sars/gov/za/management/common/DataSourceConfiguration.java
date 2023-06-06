@@ -67,3 +67,42 @@ public class DataSourceConfiguration {
     }
 
 }
+  // Comment for @Configuration
+    // Indicates that this class is a configuration class for Spring.
+
+    // Comment for @EnableJpaRepositories
+    // Enables JPA repositories in the specified base package(s) and sets the transaction manager to be used.
+
+    // Comment for @ComponentScan
+    // Specifies the base package(s) to scan for Spring components (beans).
+
+    // Comment for @EnableTransactionManagement
+    // Enables Spring's annotation-driven transaction management.
+
+    // Comment for @Bean
+    // Indicates that the method entityManagerFactory() is a bean-producing method.
+    // The specified name is used to uniquely identify this bean.
+
+    // Comment for method entityManagerFactory()
+    // Configures and returns a LocalContainerEntityManagerFactoryBean bean.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
+    // Adds a Hibernate property for the SQL dialect to be used as SQL Server.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.SHOW_SQL, true);
+    // Enables the display of SQL statements in the console.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.FORMAT_SQL, true);
+    // Enables the formatting of SQL statements.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "update");
+    // Configures Hibernate to automatically update the database schema based on the entity mappings.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.ENABLE_LAZY_LOAD_NO_TRANS, true);
+    // Enables lazy loading of associations outside of a transaction.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.GENERATE_STATISTICS, true);
+    // Enables the generation of statistics about Hibernate's internal state.
+
+    // Comment for hibernateProps.put(org.hibernate.cfg.Environment.DEFAULT_BATCH_FETCH_SIZE, 100);
+    // Configures the default batch fetch size for

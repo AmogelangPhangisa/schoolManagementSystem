@@ -8,7 +8,7 @@
       xmlns:b="http://bootsfaces.net/ui">
     <h:body>
         <ui:composition>
-            <b:navBar brandStyle="font-size: smaller"  brand="Administration" fluid="true"   brandHref="#" rendered="#">
+            <b:navBar brandStyle="font-size: smaller"  brand="Administration" fluid="true"   brandHref="#" rendered="#{menuBean.activeUser.router.administrator}">
                 <b:navbarLinks style="font-size: smaller">
                     <b:navCommandLink iconAwesome="fa-home" action="#{menuBean.route('/landingPage')}" immediate="true"></b:navCommandLink>
                     <b:navCommandLink value="School" action="#{menuBean.route('/school')}"  immediate="true"></b:navCommandLink>

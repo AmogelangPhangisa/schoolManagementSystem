@@ -16,17 +16,17 @@
                 <b:column col-md="5">
                     <p:outputLabel value="School Management System" styleClass="headercss"/>
                 </b:column>
-                <b:column col-md="3" rendered="#{headerBean.activeUser.userLoginIndicator}">
+                <b:column col-md="3" rendered="#{headerBean.activeUserBean.userLoginIndicator}">
                     <b:row>
                         <h:outputFormat value="[ {0} {1} ]">
                             <f:param value="Login As :"/>
-                            <f:param value="#{headerBean.activeUser.username}"/>
+                            <f:param value="#{headerBean.activeUserBean.username}  #{headerBean.activeUserBean.lastName}"/>
                         </h:outputFormat>
                     </b:row>
                     <b:row>
                         <h:outputFormat value="[ {0} {1} ]">
                             <f:param value="Status:"/>
-                            <f:param value="#{headerBean.activeUser.systemUserStatus.toString()}"/>
+                            <f:param value="#{headerBean.activeUserBean.systemUserStatus.toString()}"/>
                         </h:outputFormat>
                     </b:row>
                     <b:row>

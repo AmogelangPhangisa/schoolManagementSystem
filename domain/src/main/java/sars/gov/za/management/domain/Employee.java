@@ -100,8 +100,5 @@ public class Employee  extends Person{
 
     public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
-    }
-    
-  
-    
+    } 
 }

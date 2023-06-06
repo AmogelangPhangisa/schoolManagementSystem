@@ -4,145 +4,21 @@
  */
 package sars.gov.za.management.mb;
 
-;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.bean.ManagedProperty;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
 import javax.faces.application.FacesMessage;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
 import javax.faces.bean.ManagedProperty;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
 import javax.faces.context.FacesContext;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 /**
  *
  * @author S2028873
  */
-
-
 public class BaseBean<T> extends SpringBeanAutowiringSupport {
 
     @ManagedProperty(value = "#{activeUserBean}")
@@ -160,8 +36,22 @@ public class BaseBean<T> extends SpringBeanAutowiringSupport {
 
     final Logger LOG = Logger.getLogger(BaseBean.class.getName());
 
+    //5 june reset boolen values to false
+    public BaseBean reset() {
+        setList(false);
+        setAdd(false);
+        setUpdate(false);
+        setSearch(false);
+
+        return this;
+    }
+
     public ActiveUserBean getActiveUser() {
         return activeUserBean;
+    }
+    
+      public void setActiveUser (ActiveUserBean activeUserBean) {
+        this.activeUserBean = activeUserBean;
     }
 
     public void redirect(String page) {
@@ -181,14 +71,50 @@ public class BaseBean<T> extends SpringBeanAutowiringSupport {
 
         return builder.toString();
     }
-    public void addInformationMessage(String detail){
-        FacesMessage massage = new FacesMessage(FacesMessage.SEVERITY_INFO,"",detail);
+
+    public void addInformationMessage(String detail) {
+        FacesMessage massage = new FacesMessage(FacesMessage.SEVERITY_INFO, "", detail);
         FacesContext.getCurrentInstance().addMessage(null, massage);
     }
-    public void addErrorMessage(String detail){
-        FacesMessage massage = new FacesMessage(FacesMessage.SEVERITY_ERROR,"",detail);
+
+    public void addErrorMessage(String detail) {
+        FacesMessage massage = new FacesMessage(FacesMessage.SEVERITY_ERROR, "", detail);
         FacesContext.getCurrentInstance().addMessage(null, massage);
     }
+
+    //generic methods
+    public void addEntity(T entity) {
+        this.entity = entity;
+    }
+
+    public void remove(T entity) {
+        collections.remove(entity);
+    }
+
+    public void addCollections(List<T> list) {
+        collections.clear();
+        collections.addAll(list);
+    }
+
+    public void synchronize(T entity) {
+        if (collections.contains(entity)) {
+            collections.remove(entity);
+        }
+    }
+
+    public void updateCollections(List<T> list) {
+        collections.addAll(list);
+    }
+
+    public void addCollection(T entity) {
+        collections.add(0, entity);
+    }
+
+    public void addCollections(Set<T> list) {
+        collections.clear();
+        collections.addAll(list);
+    }
+    //end of generics
 
     public List<String> getErrorCollectMag() {
         return errorCollectMag;
