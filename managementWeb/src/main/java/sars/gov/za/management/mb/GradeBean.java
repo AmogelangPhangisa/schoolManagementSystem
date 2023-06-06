@@ -42,7 +42,7 @@ public class GradeBean extends BaseBean<Grade> {
         } else {
             setPanelTitleName("Add Grade");
             grade = new Grade();
-            grade.setCeatedBy(getActiveUser().getIdentifier());
+            grade.setCreatedBy(getActiveUser().getIdentifier());
             grade.setCreatedDate(new Date());
             addCollection(grade);
         }

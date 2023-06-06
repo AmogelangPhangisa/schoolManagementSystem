@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import org.hibernate.envers.Audited;
 import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 /**
@@ -26,7 +27,7 @@ public class Grade extends BaseEntity {
     @Column(name = "description")
     private String description;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private School school;
 
     public String getDescription() {

@@ -29,7 +29,7 @@ public class BaseEntity implements Serializable{
 
     @Audited
     @Column(name = "Created_by", updatable = false, nullable = false, length = 65)
-    private String ceatedBy;
+    private String createdBy;
 
     @Audited
     @Temporal(TemporalType.TIMESTAMP)
@@ -53,12 +53,12 @@ public class BaseEntity implements Serializable{
         this.id = id;
     }
 
-    public String getCeatedBy() {
-        return ceatedBy;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCeatedBy(String ceatedBy) {
-        this.ceatedBy = ceatedBy;
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     public Date getCreatedDate() {

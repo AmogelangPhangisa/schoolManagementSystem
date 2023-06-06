@@ -31,13 +31,13 @@ public class SchoolHelper {
     public static School getSchool(String schoolName, String RegistrationNumber) {
 
         School school = new School();
-        school.setCeatedBy("test");
+        school.setCreatedBy("test");
         school.setCreatedDate(new Date());
         school.setSchoolname(schoolName);
         school.setRegistratinNumber(RegistrationNumber);
 
         ContactDetail contactDetail = new ContactDetail();
-        contactDetail.setCeatedBy("Test");
+        contactDetail.setCreatedBy("Test");
         contactDetail.setCreatedDate(new Date());
         contactDetail.setCellphoneNumber("02837352893");
         contactDetail.setTelephoneNumber("0529875256");
@@ -45,7 +45,7 @@ public class SchoolHelper {
         school.setContactDetail(contactDetail);
 
         Address postalAddress = new Address();
-        postalAddress.setCeatedBy("Test");
+        postalAddress.setCreatedBy("Test");
         postalAddress.setCreatedDate(new Date());
         postalAddress.setAddressLine1("1021");
         postalAddress.setAddressLine2("Kgomotso High");
@@ -54,7 +54,7 @@ public class SchoolHelper {
         school.addAddress(postalAddress);
 
         Address resAddress = new Address();
-        resAddress.setCeatedBy("Test");
+        resAddress.setCreatedBy("Test");
         resAddress.setCreatedDate(new Date());
         resAddress.setAddressType(AddressType.RESIDENCIALADDRESS);
         resAddress.setAddressLine1("1120 Madiba street");
@@ -70,7 +70,7 @@ public class SchoolHelper {
     public static Grade addGrade(String description, School school) {
 
         Grade grade = new Grade();
-        grade.setCeatedBy("test");
+        grade.setCreatedBy("test");
         grade.setCreatedDate(new Date());
         grade.setDescription(description);
         grade.setSchool(school);
@@ -79,7 +79,7 @@ public class SchoolHelper {
 
     public static Subject addSubject(String name, String code, School school) {
         Subject subject = new Subject();
-        subject.setCeatedBy("Test");
+        subject.setCreatedBy("Test");
         subject.setCreatedDate(new Date());
         subject.setName(name);
         subject.setCode(code);
@@ -89,7 +89,7 @@ public class SchoolHelper {
 
     public static Employee addEmployee(String employeeId, String saceReg, School school, List<Grade> grades, List<Subject> subjects) {
         Employee employee = new Employee();
-        employee.setCeatedBy("Test");
+        employee.setCreatedBy("Test");
         employee.setCreatedDate(new Date());
         employee.setPersonType(PersonType.EMPLOYEE);
         employee.setEmployeeType(EmployeeType.EDUCATOER);
@@ -104,7 +104,7 @@ public class SchoolHelper {
         employee.setSubjects(subjects);
 
         Address address = new Address();
-        address.setCeatedBy("Test");
+        address.setCreatedBy("Test");
         address.setCreatedDate(new Date());
         address.setAddressType(AddressType.POSTALADDRESS);
         address.setAddressLine1("PO BOX 102");
@@ -114,7 +114,7 @@ public class SchoolHelper {
         employee.addAddress(address);
 
         Address resAddress = new Address();
-        resAddress.setCeatedBy("Test");
+        resAddress.setCreatedBy("Test");
         resAddress.setCreatedDate(new Date());
         resAddress.setAddressType(AddressType.RESIDENCIALADDRESS);
         resAddress.setAddressLine1("Voelvanger");
@@ -124,7 +124,7 @@ public class SchoolHelper {
         school.addAddress(resAddress);
 
         ContactDetail contactDetail = new ContactDetail();
-        contactDetail.setCeatedBy("Test");
+        contactDetail.setCreatedBy("Test");
         contactDetail.setCreatedDate(new Date());
         contactDetail.setCellphoneNumber("02837352893");
         contactDetail.setTelephoneNumber("0529875256");
@@ -136,7 +136,7 @@ public class SchoolHelper {
 
     public static Student addStudent(String studentNumber, Grade grade, School school, List<Subject> subjectsList) {
         Student student = new Student();
-        student.setCeatedBy("Test");
+        student.setCreatedBy("Test");
         student.setCreatedDate(new Date());
         student.setPersonType(PersonType.LEARNER);
         student.setStudentNumber(studentNumber);
@@ -149,7 +149,7 @@ public class SchoolHelper {
         student.setSubjects(subjectsList);
 
         Address address = new Address();
-        address.setCeatedBy("Test");
+        address.setCreatedBy("Test");
         address.setCreatedDate(new Date());
         address.setAddressType(AddressType.POSTALADDRESS);
         address.setAddressLine1("PO BOX 102");
@@ -159,7 +159,7 @@ public class SchoolHelper {
         student.addAddress(address);
 
         Address resAddress = new Address();
-        resAddress.setCeatedBy("Test");
+        resAddress.setCreatedBy("Test");
         resAddress.setCreatedDate(new Date());
         resAddress.setAddressType(AddressType.RESIDENCIALADDRESS);
         resAddress.setAddressLine1("Voelvanger");
@@ -169,19 +169,17 @@ public class SchoolHelper {
         student.addAddress(resAddress);
 
         ContactDetail contactDetail = new ContactDetail();
-        contactDetail.setCeatedBy("Test");
+        contactDetail.setCreatedBy("Test");
         contactDetail.setCreatedDate(new Date());
         contactDetail.setCellphoneNumber("02837352893");
         contactDetail.setTelephoneNumber("0529875256");
         contactDetail.setEmail("phatshimo@gmail.com");
         student.setContactDetails(contactDetail);
-
         return student;
     }
-
     public static Assessment addAssessment(String name, String discription, Date dueDate, Date firstSubmissionDate, double fullMark, double passMark, double studentMark, Subject subject,AssessmentStatus asssessmentStatus) {
         Assessment assessment = new Assessment();
-        assessment.setCeatedBy("test");
+        assessment.setCreatedBy("test");
         assessment.setCreatedDate(dueDate);
         assessment.setName(name);
         assessment.setDiscription(discription);
@@ -199,7 +197,7 @@ public class SchoolHelper {
      public static User addUser(String UserName,String password,String confirmPassword,String changePassword,SystemUserStatus systemUserStatus,School school) {
        
         User user = new User();
-        user.setCeatedBy("Test");
+        user.setCreatedBy("Test");
         user.setCreatedDate(new Date());
         user.setPersonType(PersonType.ADMINISTRATOR);
         user.setUserName(UserName);
@@ -211,10 +209,11 @@ public class SchoolHelper {
         user.setFirstName("Amo");
         user.setLastName("Park");
         user.setIdentityNumber("777777");
+        user.setIdentifer(user.getIdentityNumber());
         user.setGender(Gender.MALE);
           
         Address address = new Address();
-        address.setCeatedBy("Test");
+        address.setCreatedBy("Test");
         address.setCreatedDate(new Date());
         address.setAddressType(AddressType.POSTALADDRESS);
         address.setAddressLine1("PO BOX 102");
@@ -224,7 +223,7 @@ public class SchoolHelper {
         user.addAddress(address);
 
         Address resAddress = new Address();
-        resAddress.setCeatedBy("Test");
+        resAddress.setCreatedBy("Test");
         resAddress.setCreatedDate(new Date());
         resAddress.setAddressType(AddressType.RESIDENCIALADDRESS);
         resAddress.setAddressLine1("K town");
@@ -234,7 +233,7 @@ public class SchoolHelper {
         user.addAddress(resAddress);
 
         ContactDetail contactDetail = new ContactDetail();
-        contactDetail.setCeatedBy("Test");
+        contactDetail.setCreatedBy("Test");
         contactDetail.setCreatedDate(new Date());
         contactDetail.setCellphoneNumber("000000");
         contactDetail.setTelephoneNumber("00000");

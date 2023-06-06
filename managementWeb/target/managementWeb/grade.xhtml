@@ -34,7 +34,7 @@
                             <h:outputText value="#{grade.createdBy}"/>
                         </p:column>
                         <p:column headerText="Description">
-                            <h:outputText value="#{grade.designation}"/>
+                            <h:outputText value="#{grade.description}"/>
                         </p:column>
                         <p:column headerText="Action" styleClass="large">
                             <b:commandButton look="primary" size="xs" value="Edit" icon-size="xs" iconBrand="5.2.0" iconAwesome="fa-pencil"  action="#{gradeBean.addOrUpdate(grade)}" update="@form"/>
@@ -50,7 +50,7 @@
                     <b:panelGrid colSpans="12" size="md" styleClass="ui-fluid"> 
                         <b:formGroup>
                             <p:outputLabel value="Grade Description"/>
-                            <b:inputText value="#{gradeBean.entity.designation}" required="true" requiredMessage="Please enter description"/>
+                            <b:inputText value="#{gradeBean.entity.description}" required="true" requiredMessage="Please enter description"/>
                         </b:formGroup>
                     </b:panelGrid>
                     <f:facet name="footer">
